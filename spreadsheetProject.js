@@ -5,14 +5,18 @@ const median = (nums) => {
     const sorted = nums.slice().sort((a, b) => a - b);
     const length = sorted.length;
     const middle = length / 2 - 1;
-    console.log(sorted, length, middle, "\n", sorted[middle]); // [1, 2, 3, 4, 5] 5 1.5
-    console.log(isEven(length) ? average([sorted[middle], sorted[middle + 1]]) : sorted[Math.ceil(middle)]);
     return isEven(length) ? average([sorted[middle], sorted[middle + 1]]) : sorted[Math.ceil(middle)];
 };
 
-median([1, 5, 3, 4, 2,]);
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map((code) => String.fromCharCode(code));
+
+const spreadsheetFunctions = {
+    sum, 
+    average,
+    median,
+};
+console.log(spreadsheetFunctions); // {sum: ƒ, average: ƒ, median: ƒ}
 
 window.onload = () => {
     const container = document.getElementById("container");
