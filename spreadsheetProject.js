@@ -1,6 +1,5 @@
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map((code) => String.fromCharCode(code));
-console.log(charRange("A", "J")); //['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
 window.onload = () => {
     const container = document.getElementById("container");
@@ -10,4 +9,5 @@ window.onload = () => {
         label.textContent = name;
         container.appendChild(label);
     };
+    const letters = charRange("A", "J");
 };
