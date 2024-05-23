@@ -1,6 +1,7 @@
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
-const charRange = (start, end) => range(start, end);
-console.log(charRange(1, 10)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0));
+console.log(charRange("A", "J")); //[65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+// console.log(charRange(1, 10));
 window.onload = () => {
     const container = document.getElementById("container");
     const createLabel = (name) => {
