@@ -14,6 +14,7 @@ const evalFormula = (x, cells) => {
     const idToText = (id) => cells.find((cell) => cell.id === id).value;
     // Match cell references of the type A1 or J99, add range specifier ':'
     const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
+    const rangeFromString = (num1, num2) => range(parseInt(num1), parseInt(num2));
 };
 
 const spreadsheetFunctions = {
