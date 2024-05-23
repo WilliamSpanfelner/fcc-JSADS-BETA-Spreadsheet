@@ -21,7 +21,7 @@ const evalFormula = (x, cells) => {
     // This is possible since funcs have access to all vars on their creation. 
     // This is a closure.
     const elemValue = num => character => idToText(character + num);
-    const addCharacters = character1 => character2 => num => charRange(character1, character2);
+    const addCharacters = character1 => character2 => num => charRange(character1, character2).map();
 };
 
 const spreadsheetFunctions = {
