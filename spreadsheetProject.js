@@ -1,6 +1,7 @@
+const isEven = (num) => num % 2 == 0;
 const sum = (nums) => nums.reduce((acc, el) => acc + el, 0);
 
-console.log(sum([1, 2, 3])); //6
+console.log(isEven(1), isEven(2)); // false true
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map((code) => String.fromCharCode(code));
 
