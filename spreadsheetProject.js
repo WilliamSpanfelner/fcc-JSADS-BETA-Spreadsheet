@@ -13,6 +13,10 @@ window.onload = () => {
     letters.forEach(createLabel);
     range(1, 99).forEach((number) => {
         createLabel(number);
-        letters.forEach((letter) => {});
+        letters.forEach((letter) => {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.id = letter + number;
+        });
     });
 };
