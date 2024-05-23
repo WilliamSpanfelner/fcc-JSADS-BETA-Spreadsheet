@@ -3,9 +3,12 @@ const sum = (nums) => nums.reduce((acc, el) => acc + el, 0);
 const average = (nums) => sum(nums) / nums.length;
 const median = (nums) => {
     const sorted = nums.slice().sort((a, b) => a - b);
+    const length = sorted.length;
+    const middle = length / 2 - 1;
+    console.log(sorted, length, middle); //[1, 2, 3, 4, 5] 5 1.5
 };
 
-
+median([1, 5, 3, 4, 2]);
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map((code) => String.fromCharCode(code));
 
