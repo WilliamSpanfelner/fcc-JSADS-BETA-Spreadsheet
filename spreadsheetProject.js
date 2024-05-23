@@ -26,7 +26,8 @@ const evalFormula = (x, cells) => {
         };
         return inner; 
     };
-    const addCharacters = (character1) => {};
+
+    const addCharacters = character1 => character2 => {};
 };
 
 const spreadsheetFunctions = {
