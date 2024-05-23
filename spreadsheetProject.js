@@ -1,8 +1,11 @@
 const isEven = (num) => num % 2 == 0;
 const sum = (nums) => nums.reduce((acc, el) => acc + el, 0);
 const average = (nums) => sum(nums) / nums.length;
+const median = (nums) => {
+    const sorted = nums.slice().sort((a, b) => a - b);
+};
 
-console.log(average([1, 2, 3])); // 2
+
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map((code) => String.fromCharCode(code));
 
