@@ -16,7 +16,6 @@ const spreadsheetFunctions = {
     average,
     median,
 };
-console.log(spreadsheetFunctions); // {sum: ƒ, average: ƒ, median: ƒ}
 
 window.onload = () => {
     const container = document.getElementById("container");
@@ -39,3 +38,7 @@ window.onload = () => {
         });
     });
 };
+
+
+
+const update = (event) => {};
