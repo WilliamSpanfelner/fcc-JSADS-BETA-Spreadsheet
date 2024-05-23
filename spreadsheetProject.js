@@ -15,12 +15,18 @@ const evalFormula = (x, cells) => {
     // Match cell references of the type A1 or J99, add range specifier ':'
     const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
     const rangeFromString = (num1, num2) => range(parseInt(num1), parseInt(num2));
+    // Returning a function within a function is called currying.
+    // const refNum = rowValue(1);
+    // const colRefNum = refNum("A");
+    // This is possible since funcs have access to all vars on their creation. 
+    // This is a closure.
     const elemValue = (num) => {
         const inner = (character) => {
             return idToText(character + num);
         };
         return inner; 
     };
+    const addCharacters = (character1) => {};
 };
 
 const spreadsheetFunctions = {
