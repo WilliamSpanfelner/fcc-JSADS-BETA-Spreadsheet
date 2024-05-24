@@ -24,6 +24,7 @@ const evalFormula = (x, cells) => {
     const addCharacters = character1 => character2 => num => charRange(character1, character2).map(elemValue(num));
     // The capture groups defined in rangeRegex can be referenced in the call to replace with char1, num1 char2, num2:
     const rangeExpanded = x.replace(rangeRegex, (_match, char1, num1, char2, num2) => rangeFromString(num1, num2).map(addCharacters(char1)(char2)));
+    const cellRegex = /[A-J][1-9][0-9]?/gi;
 };
 
 const spreadsheetFunctions = {
