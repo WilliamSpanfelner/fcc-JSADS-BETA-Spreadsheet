@@ -6,21 +6,34 @@ const infixToFunction = {
     "*": (x, y) => x * y,
     "/": (x, y) => x / y,
 };
+
 const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator](parseFloat(arg1), parseFloat(arg2)));
 const highPrecedence = (str) => {
     const regex = /([\d.]+)([*\/])([\d.]+)/;
     const str2 = infixEval(str, regex);
     return str === str2 ? str : highPrecedence(str2);
 };
+
 const isEven = (num) => num % 2 == 0;
 const sum = (nums) => nums.reduce((acc, el) => acc + el, 0);
 const average = (nums) => sum(nums) / nums.length;
+
 const median = (nums) => {
     const sorted = nums.slice().sort((a, b) => a - b);
     const length = sorted.length;
     const middle = length / 2 - 1;
     return isEven(length) ? average([sorted[middle], sorted[middle + 1]]) : sorted[Math.ceil(middle)];
 };
+
+const spreadsheetFunctions = {
+    sum, 
+    average,
+    median,
+};
+
+const applyFunction = str => {
+    const noHigh = highPrecedence(str);
+}
 
 const range = (start, end) => Array(end - start + 1).fill(start).map((element, index) => element + index);
 const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).map((code) => String.fromCharCode(code));
@@ -40,12 +53,6 @@ const evalFormula = (x, cells) => {
     const rangeExpanded = x.replace(rangeRegex, (_match, char1, num1, char2, num2) => rangeFromString(num1, num2).map(addCharacters(char1)(char2)));
     const cellRegex = /[A-J][1-9][0-9]?/gi;
     const cellExpanded = rangeExpanded.replace(cellRegex, (match) => idToText(match.toUpperCase()));
-};
-
-const spreadsheetFunctions = {
-    sum, 
-    average,
-    median,
 };
 
 window.onload = () => {
@@ -72,9 +79,10 @@ window.onload = () => {
 };
 
 
-
 const update = (event) => {
     const element = event.target;
     const value = element.value.replace(/\s/g, '');
-    if (!value.includes(element.id) && value[0] === '=') {}
+    if (!value.includes(element.id) && value[0] === '=') {
+        
+    }
 };
