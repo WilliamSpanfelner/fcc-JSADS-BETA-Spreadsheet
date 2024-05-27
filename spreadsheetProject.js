@@ -36,6 +36,13 @@ const spreadsheetFunctions = {
     increment: (nums) => nums.map((num) => num + 1),
     someeven: (nums) => nums.some(isEven),
     everyeven: (nums) => nums.every(isEven),
+    random: (nums) => {
+        const fronttwo = nums.slice(0,2);
+        const smallNum = Math.floor(Math.min(...fronttwo));
+        const largeNum = Math.ceil(Math.max(...fronttwo));
+        console.log(smallNum, largeNum, largeNum - smallNum, (largeNum - smallNum) + smallNum);
+        return Math.floor(Math.random() * (largeNum - smallNum) + smallNum);
+    },
 };
 
 const applyFunction = str => {
