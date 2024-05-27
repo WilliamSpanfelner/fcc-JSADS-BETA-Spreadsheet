@@ -60,6 +60,7 @@ const evalFormula = (x, cells) => {
     const cellRegex = /[A-J][1-9][0-9]?/gi;
     const cellExpanded = rangeExpanded.replace(cellRegex, (match) => idToText(match.toUpperCase()));
     const functionExpanded = applyFunction(cellExpanded);
+    return functionExpanded === x ? functionExpanded : evalFormula(functionExpanded, cells);
 };
 
 window.onload = () => {
